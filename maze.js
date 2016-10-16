@@ -18,15 +18,16 @@ changes colour of div
 	}
 
 	win.setAttribute('onmouseover','winn()');
+	endState();
 };
 
 function test() {
-	
-	alert('You Lose!');
-	var wallsOfMaze=document.querySelectorAll('div.boundary');
+
+	var wallsOfMaze =document.querySelectorAll('div.boundary');
+	document.getElementById('status').innerHTML ='You Lose!';
 /*
 changes colour of div
-*/
+*/	
 	for (var i =0; i <=4; i++) {
 		wallsOfMaze[i].setAttribute('style','background-color:#ff8888');
 	}	
@@ -35,16 +36,16 @@ changes colour of div
 function winn() {
 
 	if(document.getElementById('boundary1').getAttribute('style') == 'background-color:#ff8888') {
-		alert('Avoid the walls');
+		document.getElementById('status').innerHTML ='Avoid the walls';
 	}	
 	else {
-		alert('You Win!');
+		document.getElementById('status').innerHTML ='You Win!';
 	}
 }
 
 function init() {
-	var wallsOfMaze =document.querySelectorAll('div.boundary');
 
+	
 	for (var i =0; i <=4; i++) {
 		wallsOfMaze[i].setAttribute('style','background-color: #eeeeee');
 	}
